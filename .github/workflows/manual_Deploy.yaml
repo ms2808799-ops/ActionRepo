@@ -1,0 +1,21 @@
+name: manual application deployment approve
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: choose which environment to deploy into
+        required: true
+        default: "staging"
+        type: choice
+        options:
+        - staging
+        - production
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: echo Syntax
+      run: echo "hello DevOps Mahmoud this is Deploy001"
