@@ -1,0 +1,23 @@
+name: Jobs Hierarchcal
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  iTask-CI:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo job1 name
+      run: echo "its ${{ github.job }}"
+
+  iTask-CD:
+    runs-on: ubuntu-latest
+    needs:
+    - iTask-CI
+    steps:
+    - name: echo job2 name
+      run: |+
+        echo "Using Sequential Execution"
+        echo "its ${{ github.job }}"
+         
