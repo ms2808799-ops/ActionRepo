@@ -10,6 +10,6 @@ jobs:
 
     steps:
     - name: set Env Variable
-      run: echo "API_KEY=30" >> GITHUB_ENV
+      run: echo "API_KEY=30" >> $GITHUB_ENV
     - name: printing Env Variable
       run: echo "API Key is $API_KEY"
