@@ -1,0 +1,15 @@
+name: Commands for Workflow
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  Commands:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: set Env Variable
+      run: echo "API_KEY=30" >> GITHUB_ENV
+    - name: printing Env Variable
+      run: echo "API Key is $API_KEY"
